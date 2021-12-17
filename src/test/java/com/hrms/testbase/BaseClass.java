@@ -27,11 +27,11 @@ public class BaseClass {
 
 
                 WebDriverManager.chromedriver().setup();
-//                ChromeOptions chromeOptions = new ChromeOptions();
-//                chromeOptions.setHeadless(true);
-//                driver = new ChromeDriver(chromeOptions);
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setHeadless(true);
+                driver = new ChromeDriver(chromeOptions);
                 //System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\ChromeDriver93\\chromedriver.exe");
-                driver = new ChromeDriver();
+                //driver = new ChromeDriver();
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();

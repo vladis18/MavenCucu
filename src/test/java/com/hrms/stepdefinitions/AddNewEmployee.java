@@ -51,6 +51,7 @@ public class AddNewEmployee extends CommonMethods {
        addEmployeePage.lastNameTextbox.sendKeys(lastName);
        addEmployeePage.midleNameTextBox.sendKeys(middleName);
        fullName= firstName +" " + middleName+  " " + lastName;
+       takeScreenshot("Employee name");
     }
 
     @Then("Click on the save button")
