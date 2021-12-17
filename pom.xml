@@ -148,7 +148,10 @@
                     <include>Sample.java</include>
                 </includes>
 
+                    <testFailureIgnore>true</testFailureIgnore>
+
             </configuration>
+
         </plugin>
 
 
