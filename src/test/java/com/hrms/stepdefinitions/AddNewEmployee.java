@@ -122,6 +122,8 @@ public class AddNewEmployee extends CommonMethods {
            String actualName = personalDetailsPage.getEmpProfileName();
            String expectedName = firstName +" " +middleName + " " + lastName;
            Assert.assertEquals("Verifying added Employee",expectedName,actualName);
+           takeScreenshot("Employee name");
+           System.out.println("first name " + firstName + " last name is " + lastName);
            dashboardPage.clickOnAddEmployeeBtn();
            Thread.sleep(2000);
        }
