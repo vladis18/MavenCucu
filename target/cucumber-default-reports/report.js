@@ -43,27 +43,21 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Adding multiple employees at one execution",
+  "name": "Adding multiple employees from excel",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@dtWithHeader"
+      "name": "@excelTask"
     }
   ]
 });
 formatter.step({
-  "name": "add multiple employees and verify they were added successfully",
-  "rows": [
-    {},
-    {},
-    {},
-    {}
-  ],
+  "name": "add multiple employees from excel \"EmpNames\" sheet and verify they were added successfully",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.hrms.stepdefinitions.AddNewEmployee.add_multiple_employees_and_verify_they_were_added_successfully(io.cucumber.datatable.DataTable)"
+  "location": "com.hrms.stepdefinitions.AddNewEmployee.add_multiple_employees_from_excel_sheet_and_verify_they_were_added_successfully(java.lang.String)"
 });
 formatter.result({
   "status": "passed"

@@ -19,7 +19,8 @@ import java.util.Map;
 
 public class AddNewEmployee extends CommonMethods {
   static String fullName;
-
+  static String firstName, lasName;
+  static int usernameNumber;
 //    @Given("Go to HRMS")
 //    public void go_to_HRMS() {
 //       SetUp();
@@ -46,11 +47,11 @@ public class AddNewEmployee extends CommonMethods {
         String firstName,middleName,lastName;
         firstName ="Puffy1";
         lastName="Shmuffy1";
-        middleName="Kaduffy1";
+        //middleName="Kaduffy1";
        addEmployeePage.firstNameTextBox.sendKeys(firstName);
        addEmployeePage.lastNameTextbox.sendKeys(lastName);
-       addEmployeePage.midleNameTextBox.sendKeys(middleName);
-       fullName= firstName +" " + middleName+  " " + lastName;
+       //addEmployeePage.midleNameTextBox.sendKeys(middleName);
+       fullName= firstName +" " + lastName;
        takeScreenshot("Employee name");
         System.out.println("first name " + firstName + " last name is " + lastName);
     }
@@ -61,12 +62,23 @@ public class AddNewEmployee extends CommonMethods {
     }
 
     @Then("Verify that Employee was saved")
-    public void verify_that_Employee_was_saved() {
-    String actualName =personalDetailsPage.empProfileNameLbl.getText();
-    String displayedName = personalDetailsPage.getEmpProfileName();
+    public void verify_that_Employee_was_saved() throws InterruptedException {
+        Thread.sleep(1000);
+        System.out.println( " before   ");
+        takeScreenshot(" vefify if saved ");
+        String actualName =personalDetailsPage.label2.getText();
+        System.out.println("ACTUAL NAME is "  + actualName);
+        //String actualName =personalDetailsPage.empProfileNameLbl.getText();
+        //String actualName = personalDetailsPage.empProfileNameLbl.getAttribute("text");
+        takeScreenshot(" verify if saved 2 ");
+        String displayedName = personalDetailsPage.getEmpProfileName();
+        System.out.println("Displayed name is " + displayedName);
+       // String name = firstName +" " + lasName;
     //getting an actual value through function
+
         Assert.assertEquals("Verifying profile name of the new Employee" ,fullName,actualName);
         System.out.println("expected name is " + fullName + " actual name is " + actualName);
+
     }
 
     @Then("enter first name {string}, last name {string}")
@@ -100,10 +112,12 @@ public class AddNewEmployee extends CommonMethods {
             String lastName= employeeName.get("LastName");
             System.out.println("first name is " + firstName +" mid name is " + middleName + " last name is " + lastName);
             addEmployeePage.addFirstMiddleAndLastName(firstName,middleName,lastName);
+            takeScreenshot("before save btn clicked multiple employees and verify ");
             addEmployeePage.clickOnSaveBtn();
             String actualName = personalDetailsPage.getEmpProfileName();
             String expectedName = firstName +" " +middleName + " " + lastName;
             Assert.assertEquals("Verifying added Emplyee",expectedName,actualName);
+            takeScreenshot("before click on Add Employee btn multiple employees and verify ");
             dashboardPage.clickOnAddEmployeeBtn();
         }
     }
@@ -122,11 +136,41 @@ public class AddNewEmployee extends CommonMethods {
            String actualName = personalDetailsPage.getEmpProfileName();
            String expectedName = firstName +" " +middleName + " " + lastName;
            Assert.assertEquals("Verifying added Employee",expectedName,actualName);
+           driver.manage().window().fullscreen();
            takeScreenshot("Employee name");
            System.out.println("first name " + firstName + " last name is " + lastName);
            dashboardPage.clickOnAddEmployeeBtn();
            Thread.sleep(2000);
        }
+    }
+
+    @When("Fill out FirstName and LastName")
+    public void fill_out_FirstName_and_LastName() {
+         firstName="ALEXEY";
+         lasName="BULGAKOV";
+         addEmployeePage.firstNameTextBox.sendKeys(firstName);
+         addEmployeePage.lastNameTextbox.sendKeys(lasName);
+         fullName= firstName + " " + lasName;
+    }
+
+
+
+    @Then("click on login details checkbox")
+    public void click_on_login_details_checkbox() {
+
+     addEmployeePage.createLoginCheckbox.click();
+    }
+
+    @Then("enter login details")
+    public void enter_login_details() {
+
+
+         addEmployeePage.userName.sendKeys("username12346"+usernameNumber);
+         addEmployeePage.password.sendKeys("LIFEis#333Hello@2022");
+         addEmployeePage.confirmPassword.sendKeys("LIFEis#333Hello@2022");
+         addEmployeePage.clickOnSaveBtn();
+         usernameNumber++;
+
     }
 
 

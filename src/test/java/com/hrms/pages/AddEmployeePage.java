@@ -59,6 +59,7 @@ public class AddEmployeePage extends CommonMethods {
             xpath = "//body//div//form//fieldset//ol//li//select[@name='status']"
     )
     public WebElement statusDropDownbyName;
+
     @FindBy(
             xpath = "//input[@id='btnSave']"
     )

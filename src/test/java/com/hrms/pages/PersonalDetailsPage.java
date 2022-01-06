@@ -30,8 +30,24 @@ public class PersonalDetailsPage extends CommonMethods {
     @FindBy(linkText = "Employee List")
     public WebElement employeeListBtn;
 
+//    @FindBy(css="//h1[text()='FirstName1 LastName2']")
+//    public WebElement dislpayedNameLbl;
+//
+//    @FindBy(xpath = "//div[@id='profile-pic']//h1")
+//    public WebElement displayedName;
+//
+//    @FindBy(xpath = "//div//h1")
+//    public WebElement label;
+
+    //@FindBy(xpath = "//div[@id='content']//h1")
+    @FindBy(xpath = "//body//div//h1")
+    public WebElement label2;
+
     public String getEmpProfileName(){
-        return empProfileNameLbl.getText();
+        System.out.println(" About to get this lable");
+        System.out.println("my BEAUTIFUL lable" + label2);
+        System.out.println(label2.getText());
+        return label2.getText();
     }
 
     public PersonalDetailsPage(){

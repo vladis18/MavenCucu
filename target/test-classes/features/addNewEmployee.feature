@@ -9,16 +9,20 @@ Feature: Add Employee Functionality
   @AddEmployee
   Scenario:Add employee
 #    Given Go to HRMS
+    Then Fill out all the necessary fields
     And Click on the save button
     Then Verify that Employee was saved
+
 #    And close the browser
 
   @AddEmployeeWithLoginDetails
   Scenario: Add employee with login details
+    When Fill out FirstName and LastName
     Then click on login details checkbox
     Then enter login details
     And Click on the save button
     Then Verify that Employee was saved
+
 
     @parameter
     Scenario: Add Employee without login detail and without middle name

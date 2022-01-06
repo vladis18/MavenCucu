@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         glue = "com\\hrms\\stepdefinitions",
         dryRun = false,
        // tags={"@excelTask"},
-        tags={"@dtWithHeader"},
+        tags={"@excelTask"},
         plugin = {"pretty","html:target/cucumber-default-reports","rerun:target/FailedTests.txt",
        "json:target/cucumber.json"}
         //@dtWithHeader //@pim // @excelTask
