@@ -71,9 +71,15 @@
 <!--        <dependency>-->
 <!--            <groupId>io.cucumber</groupId>-->
 <!--            <artifactId>gherkin</artifactId>-->
-<!--            <version>5.7.0</version>-->
+<!--            <version>5.7.1</version>-->
 <!--        </dependency>-->
 
+        <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>3.2.0</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-gherkin -->
         <dependency>
@@ -159,31 +165,31 @@
 
 
 
-<!--        <plugin>-->
-<!--            <groupId>net.masterthought</groupId>-->
-<!--            <artifactId>maven-cucumber-reporting</artifactId>-->
-<!--            <version>5.6.0</version>-->
-<!--            <executions>-->
-<!--                <execution>-->
-<!--                    <id>execution</id>-->
-<!--                    <phase>test</phase>-->
-<!--                    <goals>-->
-<!--                        <goal>generate</goal>-->
-<!--                    </goals>-->
-<!--                    <configuration>-->
-<!--                        <projectName>CucumberFrameworkVlad</projectName>-->
-<!--                         &lt;!&ndash; output directory for the generated report &ndash;&gt;-->
-<!--                        <outputDirectory>${project.build.directory}</outputDirectory>-->
-<!--                        &lt;!&ndash; optional, defaults to outputDirectory if not specified &ndash;&gt;-->
-<!--&lt;!&ndash;                        <inputDirectory>${project.build.directory}</inputDirectory>&ndash;&gt;-->
-<!--                        <jsonFiles>-->
-<!--                            &lt;!&ndash; supports wildcard or name pattern &ndash;&gt;-->
-<!--                            <param>**/*cucumber.json</param>-->
-<!--                        </jsonFiles>-->
-<!--                        </configuration>-->
-<!--                </execution>-->
-<!--            </executions>-->
-<!--        </plugin>-->
+        <plugin>
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>5.6.0</version>
+            <executions>
+                <execution>
+                    <id>execution</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                    <configuration>
+                        <projectName>CucumberFrameworkVlad</projectName>
+                         <!-- output directory for the generated report -->
+                        <outputDirectory>${project.build.directory}</outputDirectory>
+                        <!-- optional, defaults to outputDirectory if not specified -->
+<!--                        <inputDirectory>${project.build.directory}</inputDirectory>-->
+                        <jsonFiles>
+                            <!-- supports wildcard or name pattern -->
+                            <param>**/*cucumber.json</param>
+                        </jsonFiles>
+                        </configuration>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
     </build>
 
