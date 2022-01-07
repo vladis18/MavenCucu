@@ -123,7 +123,7 @@
 
     <build>
 
-    <plugins>
+
 
         <!-- To use the plugin goals in your POM or parent POM -->
         <plugins>
