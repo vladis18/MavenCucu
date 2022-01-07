@@ -125,6 +125,14 @@
             <type>maven-plugin</type>
         </dependency>
 
+                    <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+                    <dependency>
+                        <groupId>net.masterthought</groupId>
+                        <artifactId>cucumber-reporting</artifactId>
+                        <version>4.11.2</version>
+                    </dependency>
+
+
     </dependencies>
 
     <build>
@@ -133,25 +141,25 @@
 
         <!-- To use the plugin goals in your POM or parent POM -->
         <plugins>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version>
+            <configuration>
+                <includes>
+                    <include>Sample.java</include>
+                </includes>
+<!--                  <testFailureIgnore>true</testFailureIgnore>-->
+            </configuration>
+
+        </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
             </plugin>
-<!--        <plugin>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-surefire-plugin</artifactId>-->
-<!--            <version>3.0.0-M4</version>-->
-<!--            <configuration>-->
-<!--                <includes>-->
-<!--                    <include>Sample.java</include>-->
-<!--                </includes>-->
-<!--&lt;!&ndash;                  <testFailureIgnore>true</testFailureIgnore>&ndash;&gt;-->
-<!--            </configuration>-->
-
-<!--        </plugin>-->
-
-
 
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -190,6 +198,44 @@
                 </execution>
             </executions>
         </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+
+
+
+
+<!--            <plugin>-->
+<!--                <groupId>net.masterthought</groupId>-->
+<!--                <artifactId>maven-cucumber-reporting</artifactId>-->
+<!--                <version>3.15.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>execution</id>-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>generate</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <projectname>TestProject</projectname>-->
+<!--                            <outputdirectory>${project.build.directory}/cucumber-html-reports</outputdirectory>-->
+<!--                            <cucumberoutput>${project.build.directory}/target/cucumber.json</cucumberoutput>-->
+<!--                            <enableflashcharts/>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+
+
+
+
     </plugins>
     </build>
 
