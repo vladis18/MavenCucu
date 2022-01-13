@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
        // publish = true,
-       stepNotifications = false,
+        stepNotifications = false,
         strict = true,
         features =
  "C:\\TryAgain\\CucumberFrameworkVlad\\src\\test\\resources\\features",
@@ -16,6 +16,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
        // tags={"@excelTask"},
         tags={"@excelTask"},
+        monochrome = true,
         plugin = {"pretty","html:target/cucumber-default-reports","rerun:target/FailedTests.txt",
        "json:target/cucumber.json"}
         //@dtWithHeader //@pim // @excelTask

@@ -9,7 +9,8 @@ import io.cucumber.java.Scenario;
 
 public class Hooks {
     @Before
-    public void StartTest(){
+    public void StartTest(Scenario scenario){
+        System.out.println("Before tag  scenario is " + scenario.getName());
         BaseClass.SetUp();
     }
     @After
@@ -22,6 +23,7 @@ public class Hooks {
             screenshot=CommonMethods.screenshotTaker("passed/" + scenario.getName());
         }
         scenario.attach(screenshot,"image.png",scenario.getName());
+        System.out.println("After tag  scenario is " + scenario.getName());
         BaseClass.tearDown();
     }
 }

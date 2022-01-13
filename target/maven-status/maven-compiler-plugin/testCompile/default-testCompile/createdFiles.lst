@@ -43,6 +43,7 @@ com\hrms\utils\ExcelReading.class
 practice\LoopPrime.class
 practice\PrimeScanner.class
 com\hrms\testbase\BaseClass.class
+practice\TestString.class
 practice\PrimeNumbers.class
 com\hrms\utils\CommonMethods.class
 practice\TestScreenShots.class

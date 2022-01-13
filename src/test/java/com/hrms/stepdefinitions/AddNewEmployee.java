@@ -21,6 +21,7 @@ public class AddNewEmployee extends CommonMethods {
   static String fullName;
   static String firstName, lasName;
   static int usernameNumber;
+
 //    @Given("Go to HRMS")
 //    public void go_to_HRMS() {
 //       SetUp();
